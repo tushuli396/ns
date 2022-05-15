@@ -1,0 +1,38 @@
+#include<conio.h>
+#include<stdio.h>
+int main(){
+
+    
+    int key1,key2;
+    char str[100];
+    printf("Enter the key at sender side:");
+    scanf("%d",&key1);
+    printf("\nEnter the key at receiver side:");
+    scanf("%d",&key2);
+    int i,j;
+    if(key1==key2){
+        printf("\nKey is matched");
+        printf("\nEnter the message for encryption:");
+        scanf("%s",&str);
+        {
+            for(i=0;str[i]!='\0';i++)
+            str[i]=str[i]+key1;
+        }
+        printf("\nthe encrypted message is:%s",str);
+        printf("\nEnter the message for decryption:");
+        scanf("%s",&str);
+        {
+            for(j=0;str[j]!='\0';j++)
+            str[j]=str[j]-key1;
+        }
+        printf("\nthe decrypted message is:%s",str);
+
+
+        
+    }
+    else{
+        printf("\nkey does not match");
+    }
+    
+return 0;
+}
