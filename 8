@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include<math.h>
+ 
+int gcd(int p,int q){
+	if(q == 0) return p;
+	gcd(q,p%q);
+}
+ 
+int main()
+{
+	
+	int p, q, M;
+    printf("Enter value of p: ");
+    scanf("%d",&p);
+    printf("Enter value of q: ");
+    scanf("%d",&q);
+	int n=(p*q);
+    printf("Value of n: %d",n);
+	int phi=(p-1)*(q-1);
+    printf("\nvalue of phi: %d",phi);
+	int e = 2;
+    while(gcd(e,phi) != 1){
+    	e++;
+	}
+    printf("\nValue of e: %d",e);
+    printf("\nEnter value of M: ");
+    scanf("%d",&M);
+  
+ 
+	int c=1;
+	for(int i=0;i<e;i++)
+	{
+        c=(c*M)%n;
+	}
+    printf("Value of c: %d",c);
+	
+  
+	int d=2;
+	while(1)
+	{
+        if((d*e)%phi==1)
+    	{
+            break;
+        }
+    	else
+    	{
+        	d++;
+    	}
+	}
+    printf("\nvalue of d: %d",d);
+	
+   M=1;
+   for(int i=0;i<d;i++)
+	{
+        M=(c*M)%n;
+	}
+    printf("\nvalue of M: %d",M);
+}
