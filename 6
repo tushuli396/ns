@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+	char str[10],en[10],de[10],al[]="abcdefghijklmnopqrstuvwxyz";
+	printf("Enter a message for encryption: ");
+	scanf("%s", &str);
+	int i,j;
+	for(i=0;i<10;i++){
+		for(j=0;j<26;j++){
+			if(str[i]==al[j]){
+				int x = 26-(j+1);
+				en[i] = al[x];
+			}
+		}
+	}
+	printf("Encrypted message is %s", en);
+	for(i=0;i<strlen(en);i++){
+		for(j=0;j<26;j++){
+			if(en[i]==al[j]){
+				int x = 26-(j+1);
+				de[i] = al[x];
+			}
+		}
+	}
+	printf("\nDecrypted message is %s", de);
+}
