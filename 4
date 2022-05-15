@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+
+
+int i, key;
+char str[50], c1;
+printf("Enter a message for decryption: ");
+scanf("%s",&str);
+printf("Enter key value: ");
+scanf("%d", &key);
+for(i=0; str[i] !='\0';i++)
+{
+c1=str[i];
+if (c1>=97 && c1 <= 122)
+{
+c1=c1-key;
+if(c1<97)
+{
+c1=c1+122-97+1;
+
+}
+str[i]=c1;
+}
+else if (c1>=65 && c1 <= 90)
+{
+c1=c1-key;
+if(c1<65)
+{
+c1=c1+90-65+1;
+}
+str[i]=c1;
+}
+}
+printf("Decrypted message is: %s", str);
+return 0;
+}
